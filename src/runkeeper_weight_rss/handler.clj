@@ -51,7 +51,7 @@
   "docstring"
   [items]
   (rss/channel-xml {:title "Weight Feed" :link (env :item-url) :description "Nunya"}
-                   (map to-feed-item items)))
+                   (map to-feed-item (filter #(get % "weight") items))))
 
 (defn rss-response
   "docstring"
