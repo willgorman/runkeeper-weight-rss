@@ -12,7 +12,10 @@
                  [pandect "0.5.1"]]
   :plugins [[lein-ring "0.8.13"]
             [lein-environ "1.0.0"]]
+  :hooks [environ.leiningen.hooks]
+  :uberjar-name "runkeeper-weight-rss.jar"
   :ring {:handler runkeeper-weight-rss.handler/app}
   :profiles
   {:dev {:dependencies [[javax.servlet/servlet-api "2.5"]
-                        [ring-mock "0.1.5"]]}})
+                        [ring-mock "0.1.5"]]}
+   :production {:env {:production true}}})
