@@ -44,7 +44,7 @@
         timestamp (.parse (SimpleDateFormat. "EEE, d MMM yyyy HH:mm:ss") (get weight "timestamp"))]
     {:title   weight-val
      :pubDate timestamp
-     :link    (env :item-url)
+     :link    (str "https://api.runkeeper.com" (get weight "uri"))
      :guid    (sha1 (str weight-val (get weight "timestamp")))}))
 
 (defn channel-for
